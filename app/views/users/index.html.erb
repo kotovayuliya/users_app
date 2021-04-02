@@ -1,15 +1,17 @@
-<h1>Users</h1>
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center"><b>Firstname</b></th>
+      <th align="center"><b>Lastname</b></th>
+      <th align="center"><b>Salary</b></th>
+    </tr>
+  </thead>
 
-<table width="60%" align="center">
+<% @users.each do |user| %>
   <tr>
-    <td align="center">
-      <p>
-         Ivan Ivanov - 5000<BR>
-         Petr Petrov - 6000<BR>
-         Oksana Fedorova - 7000<BR>
-         Aleksej Grigoruk - 4000
-      </p>
-    </td>
+    <td align="center"><%= user.firstname %></td>
+    <td align="center"><%= user.lastname %></td>
+    <td align="center"><%= user.salary %></td>
   </tr>
+<% end %>
 </table>
-
