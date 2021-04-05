@@ -1,0 +1,9 @@
+<table align="center" width="15%">
+  <tr>
+    <td align="center"><b><%= @user.firstname %></b></td>
+    <td align="center"><b><%= @user.lastname %></b></td>
+    <td align="center"><%= @user.salary %> </td>
+    <td align="center"><%= link_to "Update", edit_user_path(@user) %><BR>
+    <%= link_to "Delete", @user, method: :delete %></td>
+  </tr>
+</table>
