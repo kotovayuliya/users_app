@@ -1,4 +1,5 @@
-<table align="center">
+<H1>All Users</H1>
+  <table align="center" width="15%">
   <thead>
     <tr>
       <th align="center"><b>Firstname</b></th>
@@ -6,12 +7,12 @@
       <th align="center"><b>Salary</b></th>
     </tr>
   </thead>
-
-<% @users.each do |user| %>
-  <tr>
-    <td align="center"><%= user.firstname %></td>
-    <td align="center"><%= user.lastname %></td>
-    <td align="center"><%= user.salary %></td>
-  </tr>
-<% end %>
+  <% @users.each do |user| %>
+  <tbody>
+    <tr>
+      <td align="center" colspan=2 ><%= link_to "#{user.firstname}   #{user.lastname}", user %></td>
+      <td align="center"><%= user.salary %></td>
+    </tr>
+  <tbody>
+  <% end %>
 </table>

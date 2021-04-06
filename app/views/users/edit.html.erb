@@ -1,0 +1,33 @@
+<h1>Update your profile</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <table align="center">
+        <tr>
+          <td align="center">
+            <%= f.label :firstname %>
+            <%= f.text_field :firstname %>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <%= f.label :lastname %>
+            <%= f.text_field :lastname %>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <%= f.label :salary %>
+            <%= f.text_field :salary %>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+              <%= f.submit "Save changes", class: "btn btn-primary" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>
