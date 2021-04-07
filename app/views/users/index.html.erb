@@ -2,6 +2,7 @@
   <table align="center" width="15%">
   <thead>
     <tr>
+      <th align="center"><b>ID</b></th>
       <th align="center"><b>Firstname</b></th>
       <th align="center"><b>Lastname</b></th>
       <th align="center"><b>Salary</b></th>
@@ -10,9 +11,14 @@
   <% @users.each do |user| %>
   <tbody>
     <tr>
-      <td align="center" colspan=2 ><%= link_to "#{user.firstname}   #{user.lastname}", user %></td>
+      <td align="center"><%= link_to "#{user.id}", user %></td>
+      <td align="center"><%= user.firstname %></td>
+      <td align="center"><%= user.lastname %></td>
       <td align="center"><%= user.salary %></td>
     </tr>
   <tbody>
   <% end %>
 </table>
+
+
+
