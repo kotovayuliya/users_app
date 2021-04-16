@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   def index
     @users = User.all.order('salary DESC')
-    render json: @users
+    respond_to do |format|
+      format.json do
+        render json: @users
+      end
+      format.html
+    end
   end
 
   def show

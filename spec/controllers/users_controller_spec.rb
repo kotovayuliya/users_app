@@ -6,19 +6,29 @@ RSpec.describe UsersController, type: :controller do
       User.create(firstname: "Taras", lastname: "Verhov", salary: 4000)
     end
 
-    it "returns a success response" do
-      get :index
-      expect(response).to be_success
-      json_response = JSON.parse(response.body).map do |user|
-        user.slice("firstname", "lastname", "salary")
+    context "for json format" do
+      it "returns a success response" do
+        get :index, format: :json
+        expect(response).to be_success
+        json_response = JSON.parse(response.body).map do |user|
+          user.slice("firstname", "lastname", "salary")
+        end
+        expect(json_response).to eq [
+          {
+            "firstname" => "Taras",
+            "lastname" => "Verhov",
+            "salary" => 4000
+          }
+        ]
       end
-      expect(json_response).to eq [
-        {
-          "firstname" => "Taras",
-          "lastname" => "Verhov",
-          "salary" => 4000
-        }
-      ]
+    end
+
+    context "for html format" do
+      it "returns a success response" do
+        get :index
+        expect(response).to be_success
+        assert_template :index
+      end
     end
   end
 
